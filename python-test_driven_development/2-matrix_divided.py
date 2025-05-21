@@ -1,29 +1,28 @@
 #!/usr/bin/python3
-"""
-Divides all elements of a matrix by a number.
+'''
+This is the "2-matrix_divided" module.
+The example module supplies one function, def matrix_divided().
+'''
 
-Args:
-    matrix (list of lists): A matrix (list of lists) of integers or floats.
-    div (int or float): A number to divide the matrix elements by.
 
-Returns:
-    list of lists: A new matrix with all elements divided by div, rounded to 2 decimals.
-
-Raises:
-    TypeError: If matrix is not a list of lists of integers/floats.
-    TypeError: If rows are not of the same size.
-    TypeError: If div is not a number.
-    ZeroDivisionError: If div is 0.
-"""
 def matrix_divided(matrix, div):
-    for row in range(len(matrix)):
-        for num in range(len(matrix[row])):  
-            if isinstance(matrix, str):
-                raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
-            if len(matrix[0]) != len(matrix[1]):
-                raise TypeError("Each row of the matrix must have the same size")
-            if not isinstance(div, str):
-                raise TypeError("div must be a number")
-            if div == 0:
-                raise ZeroDivisionError("division by zero")
-    return [[round(num / div, 2) for num in row] for row in matrix]
+    '''
+    Returns new list of lists diveded by div argument
+    '''
+    error = "matrix must be a matrix (list of lists) of integers/floats"
+    new_matrix = []
+    if not isinstance(div, (int, float)):
+        raise TypeError("div must be a number")
+    if (div == 0):
+        raise ZeroDivisionError("division by zero")
+    max_len = max(len(item) for item in matrix)
+    for sublist in matrix:
+        if len(sublist) != max_len:
+            raise TypeError("Each row of the matrix must have the same size")
+        new_matrix.append(sublist[:])
+    for i in range(len(matrix)):
+        for j in range(len(matrix[i])):
+            if not isinstance(new_matrix[i][j], (int, float)):
+                raise TypeError(error)
+            new_matrix[i][j] = round(new_matrix[i][j] / div, 2)
+    return new_matrix
