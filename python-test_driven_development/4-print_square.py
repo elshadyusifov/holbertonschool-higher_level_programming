@@ -19,8 +19,3 @@ def print_square(size):
         for j in range(size):
             print('#', end='')
         print()
-
-try:
-    print_square()
-except Exception as e:
-    print(e)
