@@ -58,5 +58,4 @@ class Rectangle:
         return f"Rectangle({self.__width}, {self.__height})"
 
     def __del__(self):
-        text = "Bye rectangle..."
-        return text
+        print("Bye rectangle...")
