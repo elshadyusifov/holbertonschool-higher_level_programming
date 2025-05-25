@@ -46,11 +46,8 @@ class Rectangle:
 
     def str(self):
         if self.__width == 0 or self.__height == 0:
-            print()
+            print("")
         for i in range(self.__height):
             for j in range(self.__width):
                 print('#', end='')
             print()
-
-    def repr(self):
-        print("<3-rectangle.Rectangle object at {}".format(hex(id(self))))
