@@ -45,10 +45,12 @@ class Rectangle:
         return (self.__width + self.__height) * 2
 
     def str(self):
+        if self.__width == 0 or self.__height == 0:
+            print()
         for i in range(self.__height):
             for j in range(self.__width):
                 print('#', end='')
             print()
 
     def repr(self):
-        print("3-rectangle.Rectangle object at {}".format(Rectangle))
+        print("<3-rectangle.Rectangle object at {}".format(hex(id(self))))
