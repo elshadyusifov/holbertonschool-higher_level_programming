@@ -1,7 +1,5 @@
 #!/usr/bin/python3
 
 def read_file(filename=""):
-    pass
-
-with open("my_file_0.txt", "r", encodinf="UTF8") as myfile:
+    with open("my_file_0.txt", "r", encoding="UTF8") as myfile:
     print(myfile.read())
