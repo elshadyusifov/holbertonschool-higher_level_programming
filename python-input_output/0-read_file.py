@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""This module contains a function to read a UTF-8 text file and print its content."""
+"""This module contains a function to read a
+UTF-8 text file and print its content."""
 
 
 def read_file(filename=""):
