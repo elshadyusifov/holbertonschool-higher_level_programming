@@ -3,5 +3,5 @@
 
 
 def class_to_json(obj):
-    json_string = json.dumps(obj)
+    json_string = json.dumps(obj.__dict__)
     return json_string
