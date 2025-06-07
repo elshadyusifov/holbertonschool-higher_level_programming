@@ -5,5 +5,5 @@ UTF-8 text file."""
 
 def append_write(filename="", text=""):
     """append a UTF-8 text file."""
-    with open(filename, "w", encoding="utf-8"):
-        return filename.append(str(text))
+    with open(filename, "a", encoding="utf-8"):
+        return filename(text))
