@@ -1,6 +1,6 @@
--- List all cities with their respective states in the required format
-SELECT cities.id, cities.name, 
-       (SELECT name FROM states WHERE states.id = cities.state_id) AS state_name
+-- List all cities and their corresponding states sorted by cities.id
+SELECT cities.id, cities.name, states.name AS state_name
 FROM cities
+JOIN states ON cities.state_id = states.id
 ORDER BY cities.id ASC;
 
