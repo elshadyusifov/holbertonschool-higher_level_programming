@@ -1,6 +1,9 @@
--- TV şoularını və əlaqəli janrları göstərən sorğu
+-- Select all TV shows and their associated genre IDs
 SELECT tv_shows.title, tv_show_genres.genre_id
 FROM tv_shows
-JOIN tv_show_genres ON tv_shows.id = tv_show_genres.tv_show_id
+-- Perform an INNER JOIN between tv_shows and tv_show_genres on matching tv_show_id and id
+INNER JOIN tv_show_genres
+    ON tv_shows.id = tv_show_genres.tv_show_id
+-- Order results by TV show title and genre ID in ascending order
 ORDER BY tv_shows.title ASC, tv_show_genres.genre_id ASC;
 
